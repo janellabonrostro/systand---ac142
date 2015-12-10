@@ -96,7 +96,6 @@ CREATE TABLE IF NOT EXISTS `invoice` (
 
 --
 
-janella
 -- Indexes for table `account_types`
 --
 ALTER TABLE `account_types`
