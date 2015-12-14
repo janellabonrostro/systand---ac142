@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2015 at 05:23 AM
+-- Generation Time: Dec 14, 2015 at 06:05 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `account_types` (
   `id` int(11) NOT NULL,
   `element` varchar(32) NOT NULL,
   `type` varchar(32) NOT NULL,
-  `classification` varchar(50) NOT NULL,
+  `classification` varchar(100) NOT NULL,
   `account_title` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account_types`
@@ -104,7 +104,68 @@ INSERT INTO `account_types` (`id`, `element`, `type`, `classification`, `account
 (63, 'asset', 'non-current', 'other_fixed_assets', 'provision_for_decrease_in_value_of_inventories'),
 (64, 'asset', 'non-current', 'other_fixed_assets', 'accumulated_depreciation'),
 (65, 'liability', 'current', 'financial_liabilities', 'bank_loans'),
-(66, 'liability', 'current', 'financial_liabilities', 'liabilities_arising_from_financial_leasing_transactions');
+(66, 'liability', 'current', 'financial_liabilities', 'liabilities_arising_from_financial_leasing_transactions'),
+(67, 'liability', 'current', 'financial_liabilities', 'deferred_financial_leasing_borrowing_costs'),
+(68, 'liability', 'current', 'financial_lilabilities', 'current_maturities_of_long-term_credits_and_accrued_interest'),
+(69, 'liability', 'current', 'financial_liabilities', 'current_maturities_of_bonds_and_accrued_interest'),
+(70, 'liability', 'current', 'financial_lilabilities', 'bonds_and_notes_issued'),
+(71, 'liability', 'current', 'financial_liabilities', 'other_securities_issued'),
+(72, 'liability', 'current', 'financial_lilabilities', 'value_difference_of_securities_issued'),
+(73, 'liability', 'current', 'financial_liabilities', 'other_financial_liabilities'),
+(74, 'liability', 'current', 'trade_payables', 'suppliers'),
+(75, 'liability', 'current', 'trade_payables', 'notes_payable'),
+(76, 'liability', 'current', 'trade_payables', 'rediscounts_on_notes_payable'),
+(77, 'liability', 'current', 'trade_payables', 'deposits_and_guarantees_received'),
+(78, 'liability', 'current', 'trade_payables', 'other_trade_payables'),
+(79, 'liability', 'current', 'other_liabilities', 'due_to_shareholders'),
+(80, 'liability', 'current', 'other_liabilities', 'due_to_affiliates'),
+(81, 'liability', 'current', 'other_liabilities', 'due_to_subsidiaries'),
+(82, 'liability', 'current', 'other_liabilities', 'due_to_personnel'),
+(83, 'liability', 'current', 'other_liabilities', 'rediscount_on_other_notes_payable'),
+(84, 'liability', 'current', 'other_liabilities', 'other_liabilities'),
+(85, 'liability', 'current', 'advances_received', ''),
+(86, 'liability', 'current', 'progress_for_long-term_construction_and_repair_projects', 'progress_payments_for_long-term_construction_and_repair_projects'),
+(87, 'liability', 'current', 'progress_for_long-term_construction_and_repair_projects', 'long-term_inflation_adjustment_accounts'),
+(88, 'liability', 'current', 'taxes_payable_and_other_fiscal_liabilities', 'taxes_and_funds_payable'),
+(89, 'liability', 'current', 'taxes_payable_and_other_fiscal_liabilities', 'social_security_withholdings_payable'),
+(90, 'liability', 'current', 'taxes_payable_and_other_fiscal_liabilities', 'overdue_deferred_or_restructured_taxes_and_other_liabilities'),
+(91, 'liability', 'current', 'taxes_payable_and_other_fiscal_liabilities', 'other_liabilities_payable'),
+(92, 'liability', 'current', 'provisions_for_liabilities_and_expenses', 'provision_for_income_taxes_and_other_duties_on_profit'),
+(93, 'liability', 'current', 'provisions_for_liabilities_and_expenses', 'prepaid_income_taxes_and_other_duties_on_profit'),
+(94, 'liability', 'current', 'provisions_for_liabilities_and_expenses', 'provision_for_termination_indemnities'),
+(95, 'liability', 'current', 'provisions_for_liabilities_and_expenses', 'provisions_for_other_liabilities_and_expenses'),
+(96, 'liability', 'current', 'deferred_income_and_expense_accruals', 'deferred_income'),
+(97, 'liability', 'current', 'deferred_income_and_expense_accruals', 'expense_accruals'),
+(98, 'liability', 'current', 'other_short-term_liabilities', 'vat_payable'),
+(99, 'liability', 'current', 'other_short-term_liabilities', 'other_vat'),
+(100, 'liability', 'current', 'other_short-term_liabilities', 'head_office_and_branch_current_accounts'),
+(101, 'liability', 'current', 'other_short-term_liabilities', 'stock_count_and_delivery_surpluses'),
+(102, 'liability', 'current', 'other_short-term_liabilities', 'other_short-term_liabilities'),
+(103, 'liability', 'non-current', 'financial_liabilities', 'bank_loans'),
+(104, 'liability', 'non-current', 'financial_liabilities', 'leasing_payables'),
+(105, 'liability', 'non-current', 'financial_liabilities', 'interest_payables_of_deferred_lease_costs'),
+(106, 'liability', 'non-current', 'financial_liabilities', 'bonds_issued'),
+(107, 'liability', 'non-current', 'financial_liabilities', 'other_securities_issued'),
+(108, 'liability', 'non-current', 'financial_liabilities', 'value_difference_of_securities_issued'),
+(109, 'liability', 'non-current', 'financial_liabilities', 'other_financial_liabilities'),
+(110, 'liability', 'non-current', 'trade_payables', 'suppliers'),
+(111, 'liability', 'non-current', 'trade_payables', 'notes_payable'),
+(112, 'liability', 'non-current', 'trade_payables', 'rediscounts_on_notes_payable'),
+(113, 'liability', 'non-current', 'trade_payables', 'deposits_and_guarantees_received'),
+(114, 'liability', 'non-current', 'trade_payables', 'other_trade_payables'),
+(115, 'liability', 'non-current', 'other_payables', 'due_to_shareholders'),
+(116, 'liability', 'non-current', 'other_payables', 'due_to_affiliates'),
+(117, 'liability', 'non-current', 'other_payables', 'due_to_subsidiaries'),
+(118, 'liability', 'non-current', 'other_payables', 'rediscounts_on_other_notes_payable'),
+(119, 'liability', 'non-current', 'other_payables', 'debts_to_the_public_sector_deferred_or_payable_by_installments'),
+(120, 'liability', 'non-current', 'other_payables', 'other_payables'),
+(121, 'liability', 'non-current', 'advances_received', ''),
+(122, 'liability', 'non-current', 'provisions_for_debts_and_expenses', 'provisions_for_termination_indemnities'),
+(123, 'liability', 'non-current', 'provisions_for_debts_and_expenses', 'provisions_for_other_debts_and_expenses'),
+(124, 'liability', 'non-current', 'income_relating_to_future_periods_and_expense_accruals', 'income_relating_to_future_periods'),
+(125, 'liability', 'non-current', 'income_relating_to_future_periods_and_expense_accruals', 'expense_accruals'),
+(126, 'liability', 'non-current', 'other_long-term_liabilities', 'vat_deferred_to_following_years'),
+(127, 'liability', 'non-current', 'other_long-term_liabilities', 'other_long-term_liabilities');
 
 -- --------------------------------------------------------
 
@@ -144,7 +205,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `account_types`
 --
 ALTER TABLE `account_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=128;
 --
 -- AUTO_INCREMENT for table `invoice`
 --
