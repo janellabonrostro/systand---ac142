@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2015 at 06:05 AM
+-- Generation Time: Dec 14, 2015 at 06:25 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `account_types` (
   `type` varchar(32) NOT NULL,
   `classification` varchar(100) NOT NULL,
   `account_title` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account_types`
@@ -165,7 +165,25 @@ INSERT INTO `account_types` (`id`, `element`, `type`, `classification`, `account
 (124, 'liability', 'non-current', 'income_relating_to_future_periods_and_expense_accruals', 'income_relating_to_future_periods'),
 (125, 'liability', 'non-current', 'income_relating_to_future_periods_and_expense_accruals', 'expense_accruals'),
 (126, 'liability', 'non-current', 'other_long-term_liabilities', 'vat_deferred_to_following_years'),
-(127, 'liability', 'non-current', 'other_long-term_liabilities', 'other_long-term_liabilities');
+(127, 'liability', 'non-current', 'other_long-term_liabilities', 'other_long-term_liabilities'),
+(128, 'equity', '', 'paid-in_capital', 'capital'),
+(129, 'equity', '', 'paid-in_capital', 'unpaid_capital'),
+(130, 'equity', '', 'paid-in_capital', 'positive_distinction_from_share_capital_adjustment'),
+(131, 'equity', '', 'paid-in_capital', 'negative_distinction_from_share_capital_adjustment'),
+(132, 'equity', '', 'capital_reserves', 'share_premiums'),
+(133, 'equity', '', 'capital_reserves', 'profit_from_invalidation_of_shares'),
+(134, 'equity', '', 'capital_reserves', 'revaluation_fund_of_tangible_fixed_assets'),
+(135, 'equity', '', 'capital_reserves', 'revaluation_fund_of_affiliates'),
+(136, 'equity', '', 'capital_reserves', 'cost_increase_fund'),
+(137, 'equity', '', 'capital_reserves', 'other_capital_reserves'),
+(138, 'equity', '', 'profit_reserves', 'legal_reserves'),
+(139, 'equity', '', 'profit_reserves', 'statutory_reserves'),
+(140, 'equity', '', 'profit_reserves', 'extraordinary_reserves'),
+(141, 'equity', '', 'profit_reserves', 'other_profit_reserves'),
+(142, 'equity', '', 'profit_reserves', 'special_funds'),
+(143, 'equity', '', 'previous_years_profits', ''),
+(144, 'equity', '', 'previous_years_losses', ''),
+(145, 'equity', '', 'profit_or_loss_for_the_period', '');
 
 -- --------------------------------------------------------
 
@@ -205,7 +223,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `account_types`
 --
 ALTER TABLE `account_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=128;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=146;
 --
 -- AUTO_INCREMENT for table `invoice`
 --
