@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2015 at 06:33 AM
+-- Generation Time: Dec 14, 2015 at 05:23 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `account_types` (
   `type` varchar(32) NOT NULL,
   `classification` varchar(50) NOT NULL,
   `account_title` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account_types`
@@ -74,7 +74,37 @@ INSERT INTO `account_types` (`id`, `element`, `type`, `classification`, `account
 (33, 'asset', 'non-current', 'financial_fixed_assets', 'capital_commitments_for_subsidiaries'),
 (34, 'asset', 'non-current', 'financial_fixed_assets', 'provision_for_decrease_in_value_of_shares_of_subsidiaries'),
 (35, 'asset', 'non-current', 'financial_fixed_assets', 'other_financial_fixed_assets'),
-(36, 'asset', 'non-current', 'financial_fixed_assets', 'provision_for_decrease_in_value_of_other_financial_fixed_assets');
+(36, 'asset', 'non-current', 'financial_fixed_assets', 'provision_for_decrease_in_value_of_other_financial_fixed_assets'),
+(37, 'asset', 'non-current', 'tangible_fixed_assets', 'land'),
+(38, 'asset', 'non-current', 'tangible_fixed_assets', 'land_improvements'),
+(39, 'asset', 'non-current', 'tangible_fixed_assets', 'buildings'),
+(40, 'asset', 'non-current', 'tangible_fixed_assets', 'plant_machinery_and_equipment'),
+(41, 'asset', 'non-current', 'tangible_fixed_assets', 'motor_vehicles'),
+(42, 'asset', 'non-current', 'tangible_fixed_assets', 'furniture_and_fixtures'),
+(43, 'asset', 'non-current', 'tangible_fixed_assets', 'other_tangible_fixed_assets'),
+(44, 'asset', 'non-current', 'tangible_fixed_assets', 'accumulated_depreciation'),
+(45, 'asset', 'non-current', 'tangible_fixed_assets', 'construction_in_progress'),
+(46, 'asset', 'non-current', 'tangible_fixed_assets', 'advances_given'),
+(47, 'asset', 'non-current', 'intangible_fixed_assets', 'rights'),
+(48, 'asset', 'non-current', 'intangible_fixed_assets', 'goodwill'),
+(49, 'asset', 'non-current', 'intangible_fixed_assets', 'establishment_and_foundation_expenses'),
+(50, 'asset', 'non-current', 'intangible_fixed_assets', 'research_and_development_expenses'),
+(51, 'asset', 'non-current', 'intangible_fixed_assets', 'special_costs'),
+(52, 'asset', 'non-current', 'intangible_fixed_assets', 'other_intangible_fixed_assets'),
+(53, 'asset', 'non-current', 'intangible_fixed_assets', 'accumulated_depreciation'),
+(54, 'asset', 'non-current', 'intangible_fixed_assets', 'advances_given'),
+(55, 'asset', 'non-current', 'prepaid_expenses_and_income_accruals', 'prepaid_expenses'),
+(56, 'asset', 'non-current', 'prepaid_expenses_and_income_accruals', 'income_accruals'),
+(57, 'asset', 'non-current', 'other_fixed_assets', 'vat_deductible'),
+(58, 'asset', 'non-current', 'other_fixed_assets', 'other_vat'),
+(59, 'asset', 'non-current', 'other_fixed_assets', 'long-term_inventories'),
+(60, 'asset', 'non-current', 'other_fixed_assets', 'inventories_and_tangible_fixed_assets'),
+(61, 'asset', 'non-current', 'other_fixed_assets', 'prepaid_taxes_and_funds'),
+(62, 'asset', 'non-current', 'other_fixed_assets', 'other_fixed_assets'),
+(63, 'asset', 'non-current', 'other_fixed_assets', 'provision_for_decrease_in_value_of_inventories'),
+(64, 'asset', 'non-current', 'other_fixed_assets', 'accumulated_depreciation'),
+(65, 'liability', 'current', 'financial_liabilities', 'bank_loans'),
+(66, 'liability', 'current', 'financial_liabilities', 'liabilities_arising_from_financial_leasing_transactions');
 
 -- --------------------------------------------------------
 
@@ -95,7 +125,6 @@ CREATE TABLE IF NOT EXISTS `invoice` (
 --
 
 --
-
 -- Indexes for table `account_types`
 --
 ALTER TABLE `account_types`
@@ -115,7 +144,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `account_types`
 --
 ALTER TABLE `account_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `invoice`
 --
