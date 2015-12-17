@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2015 at 05:34 AM
+-- Generation Time: Dec 17, 2015 at 06:21 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -204,7 +204,14 @@ CREATE TABLE IF NOT EXISTS `invoices` (
   `total` decimal(18,2) NOT NULL,
   `state` varchar(50) NOT NULL,
   `amount_to_pay_description` decimal(18,2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `invoices`
+--
+
+INSERT INTO `invoices` (`id`, `account_types_id`, `type`, `number`, `invoice_date`, `party`, `currency`, `untaxed`, `taxed`, `total`, `state`, `amount_to_pay_description`) VALUES
+(11, 18, 'invoice', 1, 30012013, 'globe_telecom', 'peso', '123456.78', '0.00', '123456.78', 'draft', '0.00');
 
 -- --------------------------------------------------------
 
@@ -219,7 +226,14 @@ CREATE TABLE IF NOT EXISTS `journals` (
   `debit_amount` decimal(18,2) NOT NULL,
   `account_title_c_a` varchar(50) NOT NULL,
   `credit_amount` decimal(18,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `journals`
+--
+
+INSERT INTO `journals` (`id`, `account_types_id`, `account_title_d_a`, `debit_amount`, `account_title_c_a`, `credit_amount`) VALUES
+(1, 1, 'cash', '123456.78', 'capital', '123456.78');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +249,7 @@ ALTER TABLE `account_types`
 -- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`), ADD KEY `account_types_id` (`account_types_id`);
 
 --
 -- Indexes for table `journals`
@@ -256,15 +270,21 @@ ALTER TABLE `account_types`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `journals`
 --
 ALTER TABLE `journals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `invoices`
+--
+ALTER TABLE `invoices`
+ADD CONSTRAINT `invoices_ibfk_1` FOREIGN KEY (`account_types_id`) REFERENCES `account_types` (`id`);
 
 --
 -- Constraints for table `journals`
