@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2015 at 06:25 AM
+-- Generation Time: Dec 17, 2015 at 05:34 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -188,14 +188,36 @@ INSERT INTO `account_types` (`id`, `element`, `type`, `classification`, `account
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice`
+-- Table structure for table `invoices`
 --
 
-CREATE TABLE IF NOT EXISTS `invoice` (
+CREATE TABLE IF NOT EXISTS `invoices` (
   `id` int(11) NOT NULL,
   `account_types_id` int(11) NOT NULL,
-  `account_title` varchar(100) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `number` int(11) NOT NULL,
+  `invoice_date` int(11) NOT NULL,
+  `party` varchar(100) NOT NULL,
+  `currency` varchar(50) NOT NULL,
+  `untaxed` decimal(18,2) NOT NULL,
+  `taxed` decimal(18,2) NOT NULL,
+  `total` decimal(18,2) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `amount_to_pay_description` decimal(18,2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journals`
+--
+
+CREATE TABLE IF NOT EXISTS `journals` (
+  `id` int(11) NOT NULL,
+  `account_types_id` int(11) NOT NULL,
+  `account_title_d_a` varchar(50) NOT NULL,
   `debit_amount` decimal(18,2) NOT NULL,
+  `account_title_c_a` varchar(50) NOT NULL,
   `credit_amount` decimal(18,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -210,9 +232,15 @@ ALTER TABLE `account_types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `invoice`
+-- Indexes for table `invoices`
 --
-ALTER TABLE `invoice`
+ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `journals`
+--
+ALTER TABLE `journals`
   ADD PRIMARY KEY (`id`), ADD KEY `account_types_id` (`account_types_id`);
 
 --
@@ -225,19 +253,24 @@ ALTER TABLE `invoice`
 ALTER TABLE `account_types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=146;
 --
--- AUTO_INCREMENT for table `invoice`
+-- AUTO_INCREMENT for table `invoices`
 --
-ALTER TABLE `invoice`
+ALTER TABLE `invoices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `journals`
+--
+ALTER TABLE `journals`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `invoice`
+-- Constraints for table `journals`
 --
-ALTER TABLE `invoice`
-ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`account_types_id`) REFERENCES `account_types` (`id`);
+ALTER TABLE `journals`
+ADD CONSTRAINT `journals_ibfk_1` FOREIGN KEY (`account_types_id`) REFERENCES `account_types` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
